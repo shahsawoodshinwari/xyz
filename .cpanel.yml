@@ -2,7 +2,13 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/nuclwult/demo.lastwave.xyz/django/xyz
+    # copy base app
     - /bin/cp -R base $DEPLOYPATH
+    # copy static files
     - /bin/cp -R static $DEPLOYPATH
+    # copy templates
     - /bin/cp -R templates $DEPLOYPATH
+    # copy settings
     - /bin/cp -R xyz $DEPLOYPATH
+    # copy user app
+    - /bin/cp -R user $DEPLOYPATH
