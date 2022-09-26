@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'user/css/user.css' %}">
+{% endblock %}
+{% block main %}
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+            <form class="login">
+                {% csrf_token %}
+                <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
+                <div class="form-floating">
+                    <input type="email" required class="form-control rounded-top-0" data-message="Please enter your email" id="username" name="username" placeholder="name@example.com">
+                    <label for="username">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" required class="form-control rounded-bottom-0" data-message="Please type your password" name="password" id="password" placeholder="Password">
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" name="remember_me" role="switch" id="remember-me">
+                    <label class="form-check-label" for="remember-me">Remember me</label>
+                </div>
+                <button class="btn w-100 btn-primary" type="submit" formaction="{% url 'user:login' %}" formmethod="post">Login</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'user/js/user.js' %}"></script>
+{% endblock %}
