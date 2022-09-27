@@ -20,7 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-v8&6-!pc0^zw2^)m_00f6b3l79rbyna82ie*29mn2+@4im@zt9"
+SECRET_KEY = (
+    "fjrexx63643^338jdjheh9djv8&6-!pc0^zw2^)m_00f6b3l79rbyna82ie*29mn2+@4im@zt9"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -66,6 +68,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.media",
             ],
         },
     },
@@ -123,6 +126,13 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+# https://docs.djangoproject.com/en/4.0/ref/settings/#media-root
+MEDIA_ROOT = "/media/"
+MEDIA_URL = "/media/"
+
+# https://docs.djangoproject.com/en/4.0/ref/settings/#logout-redirect-url
+LOGOUT_REDIRECT_URL = "base:index"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

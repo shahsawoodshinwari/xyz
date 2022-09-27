@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-dark bg-primary sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'base:index' %}">Navbar</a>
+        <a class="navbar-brand" href="{% url 'base:index' %}">&lt;/&gt;</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,10 +19,10 @@
                 {% else %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Settings
+                        {{ request.user.get_username }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Dashboard</a></li>
                         <li>
                             <hr class="dropdown-divider">
