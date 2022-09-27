@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'user/css/user.css' %}">
+    {% endblock %}
+{% block main %}
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+        {% if messages %}
+            {% for message in messages %}
+                <div role=alert class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible show fade">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss=alert aria-label=Close></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <h1 class="h3 mb-3 fw-normal text-center">Register</h1>
+                <div class="form-floating">
+                    <input type="email" class="form-control rounded-bottom-0" data-message="Please enter your email" id="email" placeholder="name@example.com" name="username">
+                    <label for="email">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control rounded-top-0 rounded-bottom-0" id="password" name="password" placeholder="Password">
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control rounded-top-0" id="confrim_password" name="confirmation" placeholder="Confirm Password">
+                    <label for="confrim_password">Confirm Password</label>
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" name="remember_me" role="switch" id="remember-me">
+                    <label class="form-check-label" for="remember-me">Remember me</label>
+                </div>
+                <button class="btn w-100 btn-primary" type="submit" formaction="{% url 'user:register' %}">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'user/js/user.js' %}"></script>
+{% endblock %}
