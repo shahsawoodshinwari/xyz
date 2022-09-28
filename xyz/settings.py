@@ -80,6 +80,15 @@ TEMPLATES = [
 WSGI_APPLICATION = "xyz.wsgi.application"
 
 
+AUTHENTICATION_BACKENDS = [
+    "social_core.backends.facebook.FacebookOAuth2",
+    "django.contrib.auth.backends.ModelBackend",
+]
+
+SOCIAL_AUTH_FACEBOOK_KEY = "2919642084849119"
+SOCIAL_AUTH_FACEBOOK_SECRET = "1c6edac72688d5ca862d690e06eadec8"
+
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
