@@ -12,3 +12,4 @@ deployment:
     - /bin/cp -R xyz $DEPLOYPATH
     # copy user app
     - /bin/cp -R user $DEPLOYPATH
+    - /bin/cp requirements.txt $DEPLOYPATH
