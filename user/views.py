@@ -36,7 +36,7 @@ def login_user(request):
             if user is not None:
                 login(request, user)
                 if not remember_me:
-                    request.session.set_expirey(0)
+                    request.session.set_expiry(0)
                 return HttpResponseRedirect(reverse("base:index"))
             messages.error(request, "Invalid username and/or password.")
     # when method is not post
