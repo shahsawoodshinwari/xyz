@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "base",
     "user",
     # social app
-    "social_django",
+    # "social_django",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -72,8 +72,8 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.media",
-                "social_django.context_processors.backends",
-                "social_django.context_processors.login_redirect",
+                # "social_django.context_processors.backends",
+                # "social_django.context_processors.login_redirect",
             ],
         },
     },
@@ -83,12 +83,12 @@ WSGI_APPLICATION = "xyz.wsgi.application"
 
 
 AUTHENTICATION_BACKENDS = [
-    "social_core.backends.facebook.FacebookOAuth2",
+    # "social_core.backends.facebook.FacebookOAuth2",
     "django.contrib.auth.backends.ModelBackend",
 ]
 
-SOCIAL_AUTH_FACEBOOK_KEY = "2919642084849119"
-SOCIAL_AUTH_FACEBOOK_SECRET = "1c6edac72688d5ca862d690e06eadec8"
+# SOCIAL_AUTH_FACEBOOK_KEY = "2919642084849119"
+# SOCIAL_AUTH_FACEBOOK_SECRET = "1c6edac72688d5ca862d690e06eadec8"
 
 
 # Database
@@ -132,7 +132,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -142,8 +141,8 @@ STATICFILES_DIRS = [
 ]
 
 # https://docs.djangoproject.com/en/4.0/ref/settings/#media-root
-MEDIA_ROOT = "/media/"
-MEDIA_URL = "/media/"
+# MEDIA_ROOT = "/media/"
+# MEDIA_URL = "/media/"
 
 # https://docs.djangoproject.com/en/4.0/ref/settings/#logout-redirect-url
 LOGOUT_REDIRECT_URL = "base:index"
