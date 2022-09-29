@@ -20,5 +20,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("base.urls")),
     path("accounts/", include("user.urls")),
-    path("facebook", include("social_django.urls")),
+    # path("facebook", include("social_django.urls")),
 ]

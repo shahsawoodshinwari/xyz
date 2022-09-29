@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block main %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="rounded bg-white-50 shadow p-3">
+                <div class="row g-2 align-items-center">
+                    <div class="col-12 col-md-4 col-lg-2">
+                        <div class="text-center">
+                            <img src="{{ request.user.profile.get_profile_picture.url }}" class="rounded-circle" width="100" height="100" alt="">
+                            <form action="{% url 'user:profile' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="file" hidden name="profile_picture" id="profile_picture" onchange="showBtn('#submit');removeBtn('#profile_picture_btn');">
+                                <label for="profile_picture" id="profile_picture_btn"  class="btn btn-sm btn-success mb-3">change</label>
+                                <button id="submit" type="submit" class="btn btn-sm btn-primary d-none">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-10">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item"><span class="text-muted">First Name:</span> {{ request.user.first_name }}</div>
+                            <div class="list-group-item"><span class="text-muted">Last Name:</span> {{ request.user.last_name }}</div>
+                            <div class="list-group-item"><span class="text-muted">Email:</span> {{ request.user.email }}</div>
+                            <div class="list-group-item"><span class="text-muted">Password:</span> ********</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}
+{% block script %}
+    <script>
+        function showBtn(selector) {
+            document.querySelector(selector).classList.remove('d-none');
+        }
+        function removeBtn(selector) {
+            document.querySelector(selector).classList.add('d-none');
+        }
+    </script>
+    {% endblock %}
