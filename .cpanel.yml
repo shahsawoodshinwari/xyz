@@ -5,6 +5,6 @@ deployment:
     - /bin/cp -R base $DEPLOYPATH
     - /bin/cp -R static $DEPLOYPATH
     - /bin/cp -R templates $DEPLOYPATH
-    - /bin/cp -R xyz $DEPLOYPATH
     - /bin/cp -R user $DEPLOYPATH
+    - /bin/cp -R xyz $DEPLOYPATH
     - /bin/cp requirements.txt $DEPLOYPATH
