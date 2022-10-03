@@ -27,7 +27,7 @@ SECRET_KEY = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["demo.lastwave.xyz"]
+ALLOWED_HOSTS = ["demo.lastwave.xyz", "localhost"]
 
 # CSRF_COOKIE_SECURE = True
 # SECURE_SSL_REDIRECT = True
