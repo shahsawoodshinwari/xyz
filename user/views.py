@@ -88,15 +88,24 @@ def profile(request):
     return render(request, "user/profile.html", context)
 
 
-class Password(object):
+class Password:
+    """Password object which has several validation methods"""
+
     def __init__(self, arg):
         self.arg = arg
 
+    def __str__(self):
+        """returns the string representation of the password"""
+        return f"{self.arg}"
+
     def is_numeric(self):
+        """returns true if password is entirely numeric\notherwise false"""
         return self.arg.isdigit()
 
     def is_strong(self):
+        """return true if password has any of !@#$%^&*, otherwise false"""
         return any(char in "!@#$%^&*" for char in self.arg)
 
     def has_valid_length(self):
+        """returns true if length is greater than or equal to 8, otherwise false"""
         return len(self.arg) > 7
