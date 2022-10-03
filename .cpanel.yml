@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/nuclwult/demo.lastwave.xyz/django/xyz
+    - export DEPLOYPATH=/home/nuclwult/demo.lastwave.xyz/django
     - /bin/cp -R base $DEPLOYPATH
     - /bin/cp -R static $DEPLOYPATH
     - /bin/cp -R templates $DEPLOYPATH
