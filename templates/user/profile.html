@@ -18,6 +18,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-8 col-lg-10">
+                        <h3>{{ request.user.get_username|upper }}</h3>
                         <div class="list-group list-group-flush">
                             <div class="list-group-item"><span class="text-muted">First Name:</span> {{ request.user.first_name }}</div>
                             <div class="list-group-item"><span class="text-muted">Last Name:</span> {{ request.user.last_name }}</div>
