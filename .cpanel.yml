@@ -7,4 +7,5 @@ deployment:
     - /bin/cp -R templates $DEPLOYPATH
     - /bin/cp -R user $DEPLOYPATH
     - /bin/cp -R xyz $DEPLOYPATH
+    - /bin/cp .cpanel.yml $DEPLOYPATH
     - /bin/cp requirements.txt $DEPLOYPATH
