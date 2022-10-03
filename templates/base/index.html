@@ -1,29 +1,29 @@
 {% extends "layout.html" %}
 {% block main %}
-{% if messages %}
-<div class="col-8 offset-2">
-    {% for message in messages %}
-    <div role=alert class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible show fade">
-        {{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss=alert aria-label=Close></button>
-    </div>
-    {% endfor %}
-</div>
-{% endif %}
 <div class="container py-5">
     <div class="row">
         <div class="text-center">{% now "M d g:i A" %}</div>
-        <ol class="list-group list-group-numbered col-8 offset-2">
-            {% for x, y in points %}
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="ms-2 me-auto">
-                    <div class="fw-bold">{% lorem 1 w random %}</div>
-                    {% lorem 20 w random %} - <small class="text-muted">{% now "" %}</small>
-                </div>
-                <span class="badge bg-primary rounded-pill">{{ x|add:y }}</span>
-            </li>
+        <div class="col-8 offset-2">
+            {% if messages %}
+            {% for message in messages %}
+            <div role=alert class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible show fade">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss=alert aria-label=Close></button>
+            </div>
             {% endfor %}
-        </ol>
+            {% endif %}
+            <ol class="list-group list-group-numbered">
+                {% for x, y in points %}
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">{% lorem 1 w random %}</div>
+                        {% lorem 20 w random %} - <small class="text-muted">{% now "" %}</small>
+                    </div>
+                    <span class="badge bg-primary rounded-pill">{{ x|add:y }}</span>
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
     </div>
 </div>
 {% endblock %}
