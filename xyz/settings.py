@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+from django.contrib import messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     # my app
     "base",
     "user",
+    "xyz",
     # social app
     # "social_django",
     "django.contrib.admin",
@@ -140,15 +143,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = "/home/nuclwult/demo.lastwave.xyz/django/dumps/"
-
+MEDIA_URL = "media/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+STATIC_ROOT = BASE_DIR / "dumps"
+MEDIA_ROOT = BASE_DIR / "media"
 
-# https://docs.djangoproject.com/en/4.0/ref/settings/#media-root
-# MEDIA_ROOT = "/media/"
-# MEDIA_URL = "/media/"
+
+# replace error tag with danger for bootstrap classess
+MESSAGE_TAGS = {messages.ERROR: "danger"}
 
 # https://docs.djangoproject.com/en/4.0/ref/settings/#logout-redirect-url
 LOGOUT_REDIRECT_URL = "base:index"

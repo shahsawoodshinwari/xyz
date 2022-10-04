@@ -7,7 +7,7 @@ class Profile(models.Model):
     """User profile model"""
 
     user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
-    picture = models.ImageField(upload_to="static/user/images/")
+    picture = models.ImageField(upload_to="user/images/")
 
     profiles = models.Manager()
 
