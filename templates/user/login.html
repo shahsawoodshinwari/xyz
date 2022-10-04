@@ -12,7 +12,7 @@
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
             {% if messages %}
             {% for message in messages %}
-            <div role=alert class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible show fade">
+            <div role=alert class="alert alert-{{ message.tags }} alert-dismissible show fade">
                 {{ message }}
                 <button type="button" class="btn-close" data-bs-dismiss=alert aria-label=Close></button>
             </div>
