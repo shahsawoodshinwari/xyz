@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     # my app
     "base",
     "user",
-    "xyz",
     # social app
     # "social_django",
     "django.contrib.admin",
@@ -141,14 +140,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
 STATIC_URL = "static/"
-MEDIA_URL = "media/"
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-STATIC_ROOT = BASE_DIR / "dumps"
-MEDIA_ROOT = BASE_DIR / "media"
 
 
 # replace error tag with danger for bootstrap classess
