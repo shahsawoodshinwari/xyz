@@ -4,7 +4,7 @@ from django.test import Client, TestCase
 class TestBaseAppStatus(TestCase):
     """tests status of all pages"""
 
-    def test_landing_page(self):
+    def test_landing_page_status(self):
         """tests the status of the landing page"""
         client = Client()
         response = client.get("/")

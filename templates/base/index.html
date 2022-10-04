@@ -14,10 +14,10 @@
             {% endif %}
             <div class="card">
                 <div class="card-header">
-                    Testing
+                    Welcome!
                 </div>
                 <div class="card-body">
-                    <div class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Voluptates tempora consequatur voluptatem autem, delectus dolorum ea, atque iure culpa rem dolor beatae! Facilis recusandae quis fugiat tenetur excepturi obcaecati culpa!</div>
+                    <div class="card-text">Hello {{ request.user.get_username|default:"World" }}</div>
                 </div>
             </div>
         </div>
